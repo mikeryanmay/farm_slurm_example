@@ -4,6 +4,7 @@
 #SBATCH --output=/home/%u/farm_slurm_example/simple/simple-stdout-%j.out
 #SBATCH --error=/home/%u/farm_slurm_example/simple/simple-stderr-%j.out
 #SBATCH --job-name=simple_example
+#SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
 #SBATCH --time=00:00:30
 #SBATCH --ntasks=1
