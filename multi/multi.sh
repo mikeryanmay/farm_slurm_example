@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --partition=low2
 #SBATCH --account=brannalagrp
-#SBATCH --output=/home/%u/farm_slurm_example/multi/simple-stdout-%j.out
-#SBATCH --error=/home/%u/farm_slurm_example/multi/simple-stderr-%j.out
+#SBATCH --output=/home/%u/farm_slurm_example/multi/multi-stdout-%j.out
+#SBATCH --error=/home/%u/farm_slurm_example/multi/multi-stderr-%j.out
 #SBATCH --job-name=multi_example
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
@@ -21,4 +21,4 @@ writeTime () {
 }
 export -f writeTime
 
-parallel -j $SLURM_CPUS_ON_NODE writeTime ::: {1..20}
+parallel -j $SLURM_CPUS_ON_NODE writeTime ::: {1..100}
