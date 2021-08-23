@@ -16,4 +16,4 @@ cd /home/$USER/farm_slurm_example/array/
 # run your code
 mkdir -p output
 
-parallel -j $SLURM_CPUS_ON_NODE "echo {%} > 'output/array_${SLURM_ARRAY_TASK_ID}_proc_{}.txt'" ::: {1..100}
+parallel -j $SLURM_CPUS_ON_NODE "echo ${SLURM_ARRAY_TASK_ID} -- {%} > 'output/array_${SLURM_ARRAY_TASK_ID}_proc_{}.txt'" ::: {1..100}
