@@ -14,4 +14,5 @@ cd /home/$USER/farm_slurm_example/simple/
 
 # run your code
 mkdir -p output
+
 echo "Hello World" > output/simple.txt
