@@ -10,15 +10,9 @@
 #SBATCH --ntasks=20
 
 # change to user directory
-# cd /home/$USER/farm_slurm_example/multi/
+cd /home/$USER/farm_slurm_example/multi/
 
 # run your code
 mkdir -p output
 
-writeTime () {
-	echo $(date +"%T") > "output/time_$1.txt"
-	sleep 2
-}
-export -f writeTime
-
-parallel -j $SLURM_CPUS_ON_NODE writeTime ::: {1..100}
+parallel -j $SLURM_CPUS_ON_NODE "echo {%} > 'output/proc_{}.txt'" ::: {1..100}
