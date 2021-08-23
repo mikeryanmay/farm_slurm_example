@@ -10,7 +10,7 @@
 #SBATCH --ntasks=1
 
 # change to user directory
-# cd /home/$USER/farm_slurm_example/simple/
+cd /home/$USER/farm_slurm_example/simple/
 
 # run your code
 mkdir output
