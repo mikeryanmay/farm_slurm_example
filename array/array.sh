@@ -11,12 +11,12 @@
 # change to user directory
 cd /home/$USER/farm_slurm_example/array/
 
-# move log file
-mkdir -p log
-mv "slurm-%A_%a.out" "log/slurm-%A_%a.out"
-
 # make output directory
 mkdir -p output
 
 # run code
 parallel -j $SLURM_CPUS_ON_NODE "echo ${SLURM_ARRAY_TASK_ID} -- {%} > 'output/array_${SLURM_ARRAY_TASK_ID}_proc_{}.txt'" ::: {1..100}
+
+# move log file
+mkdir -p log
+mv "slurm-%A_%a.out" "log/slurm-%A_%a.out"
