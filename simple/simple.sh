@@ -18,4 +18,4 @@ echo "Hello World" > output/simple.txt
 
 # move log file
 mkdir -p log
-mv "slurm-${SLURM_JOB_ID}.out" "log/slurm-${SLURM_ARRAY_JOB_ID}.out"
+mv "slurm-${SLURM_JOB_ID}.out" "log/slurm-${SLURM_JOB_ID}.out"
