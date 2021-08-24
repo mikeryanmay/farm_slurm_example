@@ -14,7 +14,7 @@ cd /home/$USER/farm_slurm_example/multi/
 mkdir -p output
 
 # run your code
-parallel -j $SLURM_CPUS_ON_NODE "echo {%} > 'output/proc_${SLURM_PROCID}.txt'" ::: {1..100}
+parallel -j $SLURM_CPUS_ON_NODE "echo ${SLURM_PROCID} > 'output/proc_{}.txt'" ::: {1..100}
 
 # move log file
 mkdir -p log
