@@ -1,8 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=low2
 #SBATCH --account=brannalagrp
-#SBATCH --output=/home/%u/farm_slurm_example/multi/multi-stdout-%j.out
-#SBATCH --error=/home/%u/farm_slurm_example/multi/multi-stderr-%j.out
 #SBATCH --job-name=multi_example
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
@@ -12,7 +10,12 @@
 # change to user directory
 cd /home/$USER/farm_slurm_example/multi/
 
-# run your code
+# make the output directory
 mkdir -p output
 
+# run your code
 parallel -j $SLURM_CPUS_ON_NODE "echo {%} > 'output/proc_{}.txt'" ::: {1..100}
+
+# move log file
+mkdir -p log
+mv "slurm-${SLURM_ARRAY_JOB_ID}.out" "log/slurm-${SLURM_ARRAY_JOB_ID}.out"

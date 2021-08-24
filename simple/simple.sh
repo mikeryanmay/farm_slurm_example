@@ -1,8 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=low2
 #SBATCH --account=brannalagrp
-#SBATCH --output=/home/%u/farm_slurm_example/simple/simple-stdout-%j.out
-#SBATCH --error=/home/%u/farm_slurm_example/simple/simple-stderr-%j.out
 #SBATCH --job-name=simple_example
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
@@ -12,7 +10,12 @@
 # change to user directory
 cd /home/$USER/farm_slurm_example/simple/
 
-# run your code
+# make the output directory
 mkdir -p output
 
+# run your code
 echo "Hello World" > output/simple.txt
+
+# move log file
+mkdir -p log
+mv "slurm-${SLURM_ARRAY_JOB_ID}.out" "log/slurm-${SLURM_ARRAY_JOB_ID}.out"
