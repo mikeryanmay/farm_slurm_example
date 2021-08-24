@@ -18,4 +18,4 @@ parallel -j $SLURM_CPUS_ON_NODE "echo {%} > 'output/proc_{}.txt'" ::: {1..100}
 
 # move log file
 mkdir -p log
-mv "slurm-${SLURM_ARRAY_JOB_ID}.out" "log/slurm-${SLURM_ARRAY_JOB_ID}.out"
+mv "slurm-${SLURM_JOB_ID}.out" "log/slurm-${SLURM_ARRAY_JOB_ID}.out"
