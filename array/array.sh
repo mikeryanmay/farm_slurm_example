@@ -1,9 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=low2
 #SBATCH --account=brannalagrp
-#SBATCH --output=/home/%u/farm_slurm_example/array/log/array-stdout-%j.out
-#SBATCH --error=/home/%u/farm_slurm_example/array/log/array-stderr-%j.out
-#SBATCH --job-name=array_example
+#SBATCH --job-name=array_example_%J
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
 #SBATCH --time=00:00:30
