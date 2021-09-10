@@ -4,10 +4,10 @@
 #SBATCH --job-name=array_example_%J
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
-#SBATCH --time=00:00:30
 #SBATCH --nodes=1
 #SBATCH --ntasks=20
 #SBATCH --array=1-10
+#SBATCH --time=00:00:30
 
 # change to user directory
 cd /home/$USER/farm_slurm_example/array/
