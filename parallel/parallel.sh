@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=low2
 #SBATCH --account=brannalagrp
-#SBATCH --job-name=multi_example
+#SBATCH --job-name=parallel_example
 #SBATCH --mail-user=mikeryanmay@gmail.edu
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
@@ -9,7 +9,7 @@
 #SBATCH --time=00:00:30
 
 # change to user directory
-cd /home/$USER/farm_slurm_example/multi/
+cd /home/$USER/farm_slurm_example/parallel/
 
 # make the output directory
 mkdir -p output

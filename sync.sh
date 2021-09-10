@@ -4,9 +4,9 @@
 rsync -a -e ssh $1:~/farm_slurm_example/simple/output simple/ 
 rsync -a -e ssh $1:~/farm_slurm_example/simple/log simple/ 
 
-# syncronize multi output
-rsync -a -e ssh $1:~/farm_slurm_example/multi/output multi/ 
-rsync -a -e ssh $1:~/farm_slurm_example/multi/log multi/ 
+# syncronize parallel output
+rsync -a -e ssh $1:~/farm_slurm_example/parallel/output multi/ 
+rsync -a -e ssh $1:~/farm_slurm_example/parallel/log multi/ 
 
 # syncronize array output
 rsync -a -e ssh $1:~/farm_slurm_example/array/output array/ 
